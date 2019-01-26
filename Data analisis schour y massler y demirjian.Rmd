@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, warning=F}
+library(tidyverse)
+```
+
+# DATASET
+```{r}
+df <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRJzANlQi0sIWvLuOEC-k7SvHSe_WIwWuGwpVoT7xlIkJSUu_EljDvd65rzmVH0Q_2fxRCBIFegM6OF/pub?gid=1947280559&single=true&output=csv")
+```
+
+
+# EDA
+```{r}
+df %>% 
+        ggplot(aes(x = `EDAD REAL`, y = `Edad dentaria`, color = Analisis)) +
+        geom_point() + 
+        geom_smooth()
+```
+
+
+# MAIN RESULTS
